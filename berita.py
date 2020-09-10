@@ -17,7 +17,6 @@ headers['User-Agent'] = "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML
 
 news_sites = {
         'ANTARA' : 'https://www.antaranews.com/rss/top-news', 
-        'DETIK' : 'https://rss.detik.com/index.php/detikcom_nasional',
         'TEMPO' : 'https://rss.tempo.co/nasional',
         'CNN' : 'https://www.cnnindonesia.com/nasional/rss',
         }
@@ -58,10 +57,11 @@ class PageParser(HTMLParser):
             self.p = True
     def handle_endtag(self, tag):
         if tag == 'p':
+            print('\n')
             self.p = False
     def handle_data(self, text):
         if self.p:
-            print(f'{text}\n')
+            print(text, end='')
 
 def read_more(idx):
     if not idx in saved_index:

@@ -29,7 +29,7 @@ class Antara(HTMLParser):
         # handling annoying overused <br> in antara
         if (tag == 'br') and self.active and (not self.skip):
             if not self.br_printed:
-                print('', end='')
+                print('\n', end='')
                 self.br_printed = True
 
 class Tempo(HTMLParser):

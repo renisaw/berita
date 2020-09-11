@@ -9,7 +9,7 @@
 
 import urllib.request
 import xml.etree.ElementTree as ET
-from Myparser import *
+from news_parser import *
 from sys import argv, exit
 
 headers = dict()
